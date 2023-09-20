@@ -198,6 +198,7 @@ The utilization of the `external_url` property, as stipulated in current token s
 
 5. **External Link Restrictions**: Only links marked with `prefers_external_target` should be permitted to connect to destinations outside of the `external_url`.
 6. **Proxy Requests**: To prevent the unintentional exposure of user IP addresses, all requests should be routed through a proxy. Such a server can also cache responses, mitigating the risk of unintentionally overburdening project servers.
+<img src='https://github.com/phantom/shortcuts/assets/60185486/1e903827-391e-4c5a-8126-bbd407be7f5f' alt='phantom privacy proxy diagram'/>
 
 ### Phantom Implementation
 
