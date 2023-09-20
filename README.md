@@ -1,179 +1,175 @@
-# Wallet Shortcuts:
+# Shortcuts
 
-Wallet Shortcuts is a specification for how a client should request resources be fetched, and how a server should respond to those requests. Wallet Shortcuts can be easily extended with composition to fully take advantage of a client feature set or providing new functionality.
+## Introduction
 
-Wallet Shortcuts requires use of the application/json media type for exchanging data. The full specification can be seen below.
+[Shortcuts](https://phantom.app/learn/blog/shortcuts) is a feature that enables NFT collections to surface a curated list of links to their holders. Wallets, and other clients such as NFT marketplaces, can request shortcuts for a given collection by querying the `external_url` field specified in a given NFT's metadata and appending a `/shortcuts.json` path. Shortcuts are hosted and maintained by NFT creators themselves, and should adhere to the following specification.
 
-## Schema object
+## Specification
 
-A representation of the possible actions provided by the server response.
+### Schema object
 
-| Field | Type | Description |
-| --- | --- | --- |
-| version | number | Version of the targeted schema. |
-| shortcuts | array | The list of shortcuts this project supports. |
+A representation of all possible shortcuts for a given project.
 
-- **Example**
+| Field     | Type   | Description                                  |
+| --------- | ------ | -------------------------------------------- |
+| version   | number | Version of the targeted schema.              |
+| shortcuts | array  | The list of shortcuts this project supports. |
 
-    ```json
-    {
-        "version": 1,
-        "shortcuts": []
-    }
-    ```
+**Example**
 
-## Shortcut object
+```json
+{
+  "version": 1,
+  "shortcuts": []
+}
+```
 
-A shortcut object represents a single action that can be performed in a wallet client. It has the following properties:
+### Shortcut object
 
-| Field | Type | Description |
-| --- | --- | --- |
-| label | string | The suggested text to display on the link |
-| uri | string | URI pointing to the destination of the shortcut |
-| icon | string | (Optional) The suggested icon to display on the link. The following options are available: vote, vote-2, stake, stake-2, view, chat, tip, mint, mint-2, discord, twitter, x, instagram, telegram, leaderboard, gaming, gaming-2, generic-link, generic-add |
-| prefersExternalTarget | boolean | (Optional) Whether the shortcut prefers to be opened outside of the wallet. Defaults to false |
-| preferredPresentation | string | (Optional) How the shortcut prefers to be displayed. Possible values are default and immerse. The wallets would choose how that translate to their UX. Defaults to immerse |
-| limitToCollections | string[] | (Optional) A list of collection addresses that should display this shortcut. If provided, the wallet should only show the shortcut on collections that are in this array. Other collections that share the same external_url will not show this shortcut. Addresses should be provided as strings. Defaults to an empty array [] |
-| platform | string | (Optional) Indicates to the wallet that this shortcut should only be displayed for the specified platform. Possible options are desktop, mobile, and all. Defaults to “all”. |
+A shortcut object represents a single action that can be performed in a client such as Phantom. It has the following properties:
 
-- **Example**
+| Field                 | Type     | Description                                                                                                                                                                                                                                                                                                                          |
+| --------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| label                 | string   | The suggested text to display on the link                                                                                                                                                                                                                                                                                            |
+| uri                   | string   | URI pointing to the destination of the shortcut                                                                                                                                                                                                                                                                                      |
+| icon                  | string   | (Optional) The suggested icon to display on the link. The following options are available: `vote`, `vote-2`, `stake`, `stake-2`, `view`, `chat`, `tip`, `mint`, `mint-2`, `discord`, `twitter`, `x`, `instagram`, `telegram`, `leaderboard`, `gaming`, `gaming-2`, `generic-link`, `generic-add`                                     |
+| prefersExternalTarget | boolean  | (Optional) Whether the shortcut prefers to be opened outside of the client (e.g. Outside of Phantom's in-app browser). Defaults to `false`                                                                                                                                                                                           |
+| preferredPresentation | string   | (Optional) How the shortcut prefers to be displayed. Possible values are `default` and `immerse`. The client would choose how that translate to their UX. Defaults to `immerse`                                                                                                                                                      |
+| limitToCollections    | string[] | (Optional) A list of collection addresses that should display this shortcut. If provided, the client should only show the shortcut on collections that are in this array. Other collections that share the same `external_url` will not show this shortcut. Addresses should be provided as strings. Defaults to an empty array `[]` |
+| platform              | string   | (Optional) Indicates to the client that this shortcut should only be displayed for the specified platform. Possible options are `desktop`, `mobile`, and `all`. Defaults to “all”.                                                                                                                                                   |
 
-    ```json
-    {
-        label: "Redeem",
-        uri: "https://phantom.app/redeem/{{tokenId}}",
-        prefersExternalTarget: false,
-        icon: "mint"
-    }
-    ```
-In this example, {{tokenId}} will be replaced with the on-chain identifier of the token displaying this shortcut
+When designing shortcuts, creators are not limited to static URLs. Instead, creators can specify placeholder variables that can be replaced by a given client. These variables include `{{collectionId}}`, `{{tokenId}}`, and `{{ownerAddress}}`. If you are interested in using more more placeholder variables, please let us know by opening an issue on this repository.
+
+**Example**
+
+```json
+{
+  "label": "Redeem",
+  "uri": "https://phantom.app/redeem/{{tokenId}}",
+  "prefersExternalTarget": false,
+  "icon": "mint"
+}
+```
+
+In this example, `{{tokenId}}` will be replaced with the on-chain identifier of the token displaying this shortcut.
 
 ## Implementation
 
-### Guide For Builders
+### Guide For Creators
 
-- For use of Shortcuts we request that all partners follow the following guidelines
-    
-    ### Your Shortcuts fall into one of the following categories
-    
-    - Stake
-    - Socials (Instagram, Twitter/X, Discord, Telegram)
-    - Message feature
-    - Mint
-    - Tip
-    - Vote
-    
-    **Note**: *If you’d like to do something outside these bounds, please share your plans with us so we can discuss your plans with you. We are fine with whatever links you choose but want to be sure you are set up with everything you need to make Shortcuts successful for you.* 
-    
-    ### Use one of the pre-approved icons
-    
-    [**Figma file**](https://www.figma.com/file/qAIYrXDjrrFADZmT6iTEU0/Shortcuts?type=design&mode=design)
-    
-    { icon: “name” }
-    
-    1. vote
-    2. vote-2
-    3. stake
-    4. stake-2
-    5. view
-    6. chat
-    7. tip
-    8. mint
-    9. mint-2
-    10. discord
-    11. twitter
-    12. x
-    13. instagram
-    14. telegram
-    15. leaderboard
-    16. gaming
-    17. gaming-2
-    18. generic-link
-    19. generic-add
-    
-    ### Use copy with the following guidelines
-    
-    1. All Shortcuts should start with a verb to solidify the action you want the user to take
-    2. Try to use 2-3 word phrases 
-        1. Ensure the text never wraps to a second line 
-    3. If the Shortcut isn’t an action (like “Stake” or “Mint”) you can always use “View ____” that way it still starts with a verb
-    4. **Examples** 
-        1. “Join [project name] Telegram”
-        2. “Mint NFT”
-        3. “View mint page”
-        4. “Tip artist”
+For use of Shortcuts we request that all collections adhere to the following guidelines:
+
+#### Your Shortcuts fall into one of the following categories
+
+- Staking
+- Socials (Instagram, Twitter/X, Discord, Telegram)
+- Messaging features
+- Minting
+- Tipping
+- Voting
+- Gaming
+
+**Note**: _If you’d like to do something outside these guidelines, please reach out to us. We are open to evolving these guidelines overtime and want to make sure that we can make Shortcuts successful for your project._
+
+#### Use one of the pre-approved icons
+
+[**Figma file**](https://www.figma.com/file/qAIYrXDjrrFADZmT6iTEU0/Shortcuts?type=design&mode=design)
+
+1. `vote`
+2. `vote-2`
+3. `stake`
+4. `stake-2`
+5. `view`
+6. `chat`
+7. `tip`
+8. `mint`
+9. `mint-2`
+10. `discord`
+11. `twitter`
+12. `x`
+13. `instagram`
+14. `telegram`
+15. `leaderboard`
+16. `gaming`
+17. `gaming-2`
+18. `generic-link`
+19. `generic-add`
+
+**Example**
+
+```json
+{
+  "icon": "vote"
+}
+```
+
+#### Use copy with the following guidelines
+
+- All Shortcuts should start with a verb to solidify the action you want the user to take
+- Try to use 2-3 word phrases
+  - Ensure that labels never wrap to a second line
+- If the Shortcut isn’t an action (e.g. “Stake” or “Mint”) you can always use “View \_\_\_\_” that way it still starts with a verb
+
+**Examples**
+
+- “Join [project name] Telegram”
+- “Mint NFT”
+- “View mint page”
+- “Tip artist”
+
+#### Tips for hosting shortcuts
 
 For projects that want to show shortcuts to their users, you will need to start by ensuring that your NFT(s) have an `external_url` present in their metadata. If they do, when a user clicks on an NFT in their collection, the wallet will fetch the `external_url` + `/shortcuts.json`.
 
-- Example
-    
-    NFT metadata’s `external_url` = `https://example.com`
-    wallet will request `https://example.com/shortcuts.json`
-    response from `https://example.com/shortcuts.json` looks like 
-    
-    ```json
-    {
-      "version": 1,
-      "shortcuts": [
-        {
-          "label": "Tip Artist",
-          "uri": "solana:ART5dr4bDic2sQVZoFheEmUxwQq5VGSx9he7JxHcXNQD?label=Drip+Thanks",
-          "platform": "mobile"
-        },
-        {
-          "label": "View Artist Page",
-          "uri": "https://drip.haus/degenpoet"
-        },
-        {
-          "label": "View Vault",
-          "uri": "https://drip.haus/vault"
-        }
-      ]
-    }
-    ```
-    
-    Phantom would render shortcuts like this 👇
-    
-    [shortcutsguidevid.mp4](https://prod-files-secure.s3.us-west-2.amazonaws.com/d533cfd5-ac13-41a6-8de4-92357d343c41/4ea3ebe6-c1d4-4529-bd87-a9dd666376d9/shortcutsguidevid.mp4)
-    
-    🗒️ We respect different paths in addition to the domain. So you can have `example.com/some-identifier/shortcuts.json` as well. As long as the NFT has the corresponding `external_url`, we will respect it.
-    
-    
+**Example**
 
-Builders are not limited to static URLs. There are placeholder variables that can be replaced by the platform providers. These variables include `{{collectionId}}`, `{{tokenId}}`, and `{ownerAddress}`. Please let us know if you want us to expose other variables.
+- NFT metadata’s `external_url` = `https://example.com`
+- Wallet will request `https://example.com/shortcuts.json`
+- Response from `https://example.com/shortcuts.json` looks like:
 
-- Example
+  ```json
+  {
+    "version": 1,
+    "shortcuts": [
+      {
+        "label": "Tip Artist",
+        "uri": "solana:ART5dr4bDic2sQVZoFheEmUxwQq5VGSx9he7JxHcXNQD?label=Drip+Thanks",
+        "platform": "mobile"
+      },
+      {
+        "label": "View Artist Page",
+        "uri": "https://drip.haus/degenpoet"
+      },
+      {
+        "label": "View Vault",
+        "uri": "https://drip.haus/vault"
+      }
+    ]
+  }
+  ```
 
-    In this example, {{tokenId}} will be replaced with the on-chain identifier of the token displaying this shortcut
+  In the above example, Phantom would render shortcuts like this 👇
+  [shortcutsguidevid.mp4](https://prod-files-secure.s3.us-west-2.amazonaws.com/d533cfd5-ac13-41a6-8de4-92357d343c41/4ea3ebe6-c1d4-4529-bd87-a9dd666376d9/shortcutsguidevid.mp4)
 
-    ```json
-    {
-      label: "Redeem",
-      uri: "https://example.com/redeem/{{tokenId}}",
-      prefersExternalTarget: false,
-      icon: "mint",
-    }
-    ```
-
-### For Platforms (Wallets/Marketplaces)
-We recommend adding a privacy layer between the wallet and projects to obfuscate the user, the following flow describes Phantom’s implementation.
-//// Phantom diagram here
+  > **Tip:** Phantom will respect different paths in addition to the domain. For example, you can have `example.com/some-identifier/shortcuts.json`. As long as the NFT has that path in its corresponding `external_url`, we will respect it.
 
 ## Security Considerations
 
 The utilization of the `external_url` property, as stipulated in current token standards, is recognized by Phantom as potentially hazardous. To ensure the safety of users, Phantom presents a cautionary dialogue when users engage with this property. To bolster security, it's essential to enact several preventive measures.
 
-### Recommendations for Implementing Platforms
+### Recommendations for Implementing Platforms (Wallets/Marketplaces)
 
 1. **Trusted Collections**: Only query shortcuts for collections that are neither flagged nor marked as spam. Consider prioritizing collections that have undergone verification.
 2. **Allowlist**: Introduce an `allowlist.json` containing a pre-defined list of reputable sources and initial launch collaborators.
 3. **Third-Party Verification**: Align with verification mechanisms from platforms like Magic Eden and Open Sea. Only collections verified by these entities should be considered.
 4. **User Permissions**: Propose three user settings:
-    - Allow shortcuts only from partner collections.
-    - Allow shortcuts from all collections.
-    - Disallow all shortcuts.
-   
+
+   - Allow shortcuts only from partner collections.
+   - Allow shortcuts from all collections.
+   - Disallow all shortcuts.
+
    Alternatively, provide users with a prompt on every collection page, letting them decide whether to enable shortcuts. This approach offers more granular permissions compared to a universal setting.
+
 5. **External Link Restrictions**: Only links marked with `prefers_external_target` should be permitted to connect to destinations outside of the `external_url`.
 6. **Proxy Requests**: To prevent the unintentional exposure of user IP addresses, all requests should be routed through a proxy. Such a server can also cache responses, mitigating the risk of unintentionally overburdening project servers.
 
@@ -183,8 +179,8 @@ In light of the aforementioned security concerns, Phantom has instituted a rigor
 
 For projects interested in this integration, please complete our survey for further consideration: [Phantom Features Survey](https://surveymonkey.com/r/phantomfeatures).
 
-
 ## Examples
+
 ### Mobile
 
 #### External links (Socials)
@@ -270,24 +266,22 @@ Limited to mobile platforms only as Dialect is only supported in mobile as well.
 
 ### Extension
 
-- **Seemless dApp Interaction**
-    
-    Prominent display on the collectable details and into a target dApp with Auto-Connect
-    
-    ```jsx
-    {
-      "label": "I'm feeling lucky!",
-      "uri": "https://www.degencoinflip.com/deeplink?amount=0.05&side=T",
-      "prefersExternalTarget": true,
-      "isPrimary": true
-    }
-    ```
-    
-    [quick-flip.mp4](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1a6fa011-cc40-4031-ae47-f778e681311f/quick-flip.mp4)
-    
-- **Direct users to partners**
-    
-    Projects can partner with providers to do things like loans and provide quick access for users to leverage the partnership
-    
-    [sharky.mp4](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/33992838-28be-4cb3-809a-7d24b7820a4f/sharky.mp4)
+#### dApp Intreactions
 
+Prominent display on the collectable details and into a target dApp with Auto-Connect
+
+```jsx
+{
+  "label": "I'm feeling lucky!",
+  "uri": "https://www.degencoinflip.com/deeplink?amount=0.05&side=T",
+  "prefersExternalTarget": true,
+  "isPrimary": true
+}
+```
+
+[quick-flip.mp4](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1a6fa011-cc40-4031-ae47-f778e681311f/quick-flip.mp4)
+
+#### Direct users to partners
+
+Projects can partner with providers to do things like loans and provide quick access for users to leverage the partnership
+[sharky.mp4](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/33992838-28be-4cb3-809a-7d24b7820a4f/sharky.mp4)
