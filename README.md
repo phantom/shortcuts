@@ -174,7 +174,8 @@ For projects that want to show shortcuts to their users, you will need to start 
   ```
 
   In the above example, Phantom would render shortcuts like this 👇
-    [shortcuts-with-path-external-url](https://github.com/phantom/shortcuts/assets/60185486/622ce003-09a0-4e7e-8509-72d3838f8c62)
+    
+[shortcuts-with-path-external-url](https://github.com/phantom/shortcuts/assets/60185486/622ce003-09a0-4e7e-8509-72d3838f8c62)
 
   > **Tip:** Phantom will respect different paths in addition to the domain. For example, you can have `example.com/some-identifier/shortcuts.json`. As long as the NFT has that path in its corresponding `external_url`, we will respect it.
     
@@ -205,7 +206,7 @@ In light of the aforementioned security concerns, Phantom has instituted a rigor
 For projects interested in this integration, please complete our survey for further consideration: [Phantom Features Survey](https://surveymonkey.com/r/phantomfeatures).
 
 ## Examples
-Composition is the true power of Wallet Shortcuts, instead of trying to come up with all possible use cases. Allow the flexibility to mix and match options. These are some examples.
+Composition is the true power of Shortcuts, instead of trying to come up with all possible use cases. Allow the flexibility to mix and match options. These are some examples.
 
 ### Mobile
 
@@ -292,7 +293,7 @@ Limited to mobile platforms only as Dialect is only supported in mobile as well.
 
 ### Extension
 
-####Seemless dApp Interaction
+#### Seemless dApp Interaction
     
     Prominent display on the collectable details and into a target dApp with Auto-Connect
     
@@ -307,7 +308,7 @@ Limited to mobile platforms only as Dialect is only supported in mobile as well.
     
     [quick-flip](https://github.com/phantom/shortcuts/assets/60185486/66b4680d-5c26-40a3-81de-9f98d6dca542)
     
-####Direct users to partners
+#### Direct users to partners
     
     Projects can partner with providers to do things like loans and provide quick access for users to leverage the partnership
     
