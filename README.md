@@ -157,13 +157,37 @@ Builders are not limited to static URLs. There are placeholder variables that ca
 
 ### For Platforms (Wallets/Marketplaces)
 We recommend adding a privacy layer between the wallet and projects to obfuscate the user, the following flow describes Phantom’s implementation.
+//// Phantom diagram here
 
+## Security Considerations
+
+The utilization of the `external_url` property, as stipulated in current token standards, is recognized by Phantom as potentially hazardous. To ensure the safety of users, Phantom presents a cautionary dialogue when users engage with this property. To bolster security, it's essential to enact several preventive measures.
+
+### Recommendations for Implementing Platforms
+
+1. **Trusted Collections**: Only query shortcuts for collections that are neither flagged nor marked as spam. Consider prioritizing collections that have undergone verification.
+2. **Allowlist**: Introduce an `allowlist.json` containing a pre-defined list of reputable sources and initial launch collaborators.
+3. **Third-Party Verification**: Align with verification mechanisms from platforms like Magic Eden and Open Sea. Only collections verified by these entities should be considered.
+4. **User Permissions**: Propose three user settings:
+    - Allow shortcuts only from partner collections.
+    - Allow shortcuts from all collections.
+    - Disallow all shortcuts.
+   
+   Alternatively, provide users with a prompt on every collection page, letting them decide whether to enable shortcuts. This approach offers more granular permissions compared to a universal setting.
+5. **External Link Restrictions**: Only links marked with `prefers_external_target` should be permitted to connect to destinations outside of the `external_url`.
+6. **Proxy Requests**: To prevent the unintentional exposure of user IP addresses, all requests should be routed through a proxy. Such a server can also cache responses, mitigating the risk of unintentionally overburdening project servers.
+
+### Phantom Implementation
+
+In light of the aforementioned security concerns, Phantom has instituted a rigorous vetting process for all projects. Currently, each project is manually assessed to ensure its alignment with our security standards.
+
+For projects interested in this integration, please complete our survey for further consideration: [Phantom Features Survey](https://surveymonkey.com/r/phantomfeatures).
 
 
 ## Examples
-## Mobile
+### Mobile
 
-### External links (Socials)
+#### External links (Socials)
 
 ```json
 {
@@ -177,7 +201,7 @@ To enable experiences that require the user to go into another app or website we
 
 [external.mov](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/23e584b7-82e3-49ed-aecc-a8e2b46725f0/external.mov)
 
-### Immerse experiences (Gaming)
+#### Immerse experiences (Gaming)
 
 ```json
 {
@@ -191,7 +215,7 @@ Taking full advantage of the extra available space. Developers could tailored un
 
 [Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/192e332b-3345-4eec-bd99-79c25f70122b/Untitled.qt)
 
-### Internal dApp features (Famous Foxes, Staking)
+#### Internal dApp features (Famous Foxes, Staking)
 
 ```json
 {
@@ -206,7 +230,7 @@ In this example `{{tokenID}}` will be replaced with the collectible id
 
 [Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9cb99e0f-87ac-4198-a0c1-2b3b697bfce2/Untitled.qt)
 
-### Link back into the wallet itself (Solana pay, arbitrary transactions)
+#### Link back into the wallet itself (Solana pay, arbitrary transactions)
 
 ```json
 {
@@ -227,7 +251,7 @@ To prevent broken experiences an optional platform modifier can be supplied to l
 
 [Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a9ddf158-c598-4095-b9cb-e992142e568d/Untitled.mp4)
 
-### Cross-app integrations (Dialect, Communications)
+#### Cross-app integrations (Dialect, Communications)
 
 ```json
 {
@@ -244,7 +268,7 @@ Limited to mobile platforms only as Dialect is only supported in mobile as well.
 
 [RPReplay_Final1688678108.MP4](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1851aeee-79be-429d-b907-1c5110734ff8/RPReplay_Final1688678108.mp4)
 
-## Extension
+### Extension
 
 - **Seemless dApp Interaction**
     
