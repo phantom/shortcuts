@@ -267,6 +267,7 @@ A more advanced of examples, by targeting features that the wallets already supp
 - etc
 
 To prevent broken experiences an optional platform modifier can be supplied to limit where the shortcut should be displayed.
+
 [Link to Solana Pay](https://github.com/phantom/shortcuts/assets/60185486/a0d435f3-2a9f-4335-bd69-4266f149145d)
 
 #### Cross-app integrations (Dialect, Communications)
