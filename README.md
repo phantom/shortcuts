@@ -53,11 +53,11 @@ A shortcut object represents a single action that can be performed in a client s
 | uri                   | string   | URI pointing to the destination of the shortcut                                                                                                                                                                                                                                                                                      |
 | icon                  | string   | (Optional) The suggested icon to display on the link. The following options are available: `vote`, `vote-2`, `stake`, `stake-2`, `view`, `chat`, `tip`, `mint`, `mint-2`, `discord`, `twitter`, `x`, `instagram`, `telegram`, `leaderboard`, `gaming`, `gaming-2`, `generic-link`, `generic-add`                                     |
 | prefersExternalTarget | boolean  | (Optional) Whether the shortcut prefers to be opened outside of the client (e.g. Outside of Phantom's in-app browser). Defaults to `false`                                                                                                                                                                                           |
-| preferredPresentation | string   | (Optional) How the shortcut prefers to be displayed. Possible values are `default` and `immerse`. The client would choose how that translate to their UX. Defaults to `immerse`                                                                                                                                                      |
+| preferredPresentation | string   | (Optional) How the shortcut prefers to be displayed. Possible values are `default` and `immerse`. The client would choose how that translates to their UX. Defaults to `immerse`                                                                                                                                                      |
 | limitToCollections    | string[] | (Optional) A list of collection addresses that should display this shortcut. If provided, the client should only show the shortcut on collections that are in this array. Other collections that share the same `external_url` will not show this shortcut. Addresses should be provided as strings. Defaults to an empty array `[]` |
 | platform              | string   | (Optional) Indicates to the client that this shortcut should only be displayed for the specified platform. Possible options are `desktop`, `mobile`, and `all`. Defaults to “all”.                                                                                                                                                   |
 
-When designing shortcuts, creators are not limited to static URLs. Instead, creators can specify placeholder variables that can be replaced by a given client. These variables include `{{collectionId}}`, `{{tokenId}}`, and `{{ownerAddress}}`. If you are interested in using more more placeholder variables, please let us know by opening an issue on this repository.
+When designing shortcuts, creators are not limited to static URLs. Instead, creators can specify placeholder variables that can be replaced by a given client. These variables include `{{collectionId}}`, `{{tokenId}}`, and `{{ownerAddress}}`. If you are interested in using more placeholder variables, please let us know by opening an issue on this repository.
 
 **Example**
 
@@ -262,7 +262,7 @@ In this example `{{tokenID}}` will be replaced with the collectible id
 ```
 
 For a slew of more advanced examples, you can target features that wallets already support. Developers can interact with any property the wallet exposes.
-To prevent broken experiences an optional platform modifier can be supplied to limit where the shortcut should be displayed.
+To prevent broken experiences, an optional platform modifier can be supplied to limit where the shortcut should be displayed.
 
 [Link to Solana Pay](https://github.com/phantom/shortcuts/assets/60185486/a0d435f3-2a9f-4335-bd69-4266f149145d)
 
