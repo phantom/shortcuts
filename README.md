@@ -2,24 +2,20 @@
 # Shortcuts
 
 ## Table of Contents
-- [Wallet Shortcuts](#wallet-shortcuts)
-  - [Schema object](#schema-object)
-  - [Shortcut object](#shortcut-object)
+- [Shortcuts](#shortcuts)
+  - [Introduction](#introduction)
+  - [Specification](#specification)
+    - [Schema object](#schema-object)
+    - [Shortcut object](#shortcut-object)
   - [Implementation](#implementation)
-    - [Guide For Builders](#guide-for-builders)
-    - [For Platforms (Wallets/Marketplaces)](#for-platforms-walletsmarketplaces)
+    - [Guide For Creators](#guide-for-creators)
+    - [Tips for hosting shortcuts](#tips-for-hosting-shortcuts)
   - [Security Considerations](#security-considerations)
-    - [Recommendations for Implementing Platforms](#recommendations-for-implementing-platforms)
+    - [Recommendations for Implementing Platforms (Wallets/Marketplaces)](#recommendations-for-implementing-platforms-walletsmarketplaces)
     - [Phantom Implementation](#phantom-implementation)
   - [Examples](#examples)
     - [Mobile](#mobile)
-      - [External links (Socials)](#external-links-socials)
-      - [Immerse experiences (Gaming)](#immerse-experiences-gaming)
-      - [Internal dApp features (Famous Foxes, Staking)](#internal-dapp-features-famous-foxes-staking)
-      - [Link back into the wallet itself (Solana pay, arbitrary transactions)](#link-back-into-the-wallet-itself-solana-pay-arbitrary-transactions)
-      - [Cross-app integrations (Dialect, Communications)](#cross-app-integrations-dialect-communications)
     - [Extension](#extension)
-
 
 ## Introduction
 
