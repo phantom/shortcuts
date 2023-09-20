@@ -176,7 +176,7 @@ Builders are not limited to static URLs. There are placeholder variables that ca
 
 ### For Platforms (Wallets/Marketplaces)
 We recommend adding a privacy layer between the wallet and projects to obfuscate the user, the following flow describes Phantom’s implementation.
-![Shortcuts-Proxy-Diagram](https://github.com/phantom/shortcuts/assets/60185486/b0ee172b-a3b7-4a27-ab4b-ad72784838a8)
+![Shortcuts-Proxy-Diagram](https://github.com/phantom/shortcuts/assets/60185486/51abd8b7-89cb-4bcf-bdd3-0d19f16eeef0)
 
 
 ## Security Considerations
