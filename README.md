@@ -30,9 +30,7 @@ A shortcut object represents a single action that can be performed in a wallet c
 | --- | --- | --- |
 | label | string | The suggested text to display on the link |
 | uri | string | URI pointing to the destination of the shortcut |
-| icon | string | (Optional) The suggested icon to display on the link. The following options are available:
-
-vote, vote-2, stake, stake-2, view, chat, tip, mint, mint-2, discord, twitter, x, instagram, telegram, leaderboard, gaming, gaming-2, generic-link, generic-add |
+| icon | string | (Optional) The suggested icon to display on the link. The following options are available: vote, vote-2, stake, stake-2, view, chat, tip, mint, mint-2, discord, twitter, x, instagram, telegram, leaderboard, gaming, gaming-2, generic-link, generic-add |
 | prefersExternalTarget | boolean | (Optional) Whether the shortcut prefers to be opened outside of the wallet. Defaults to false |
 | preferredPresentation | string | (Optional) How the shortcut prefers to be displayed. Possible values are default and immerse. The wallets would choose how that translate to their UX. Defaults to immerse |
 | limitToCollections | string[] | (Optional) A list of collection addresses that should display this shortcut. If provided, the wallet should only show the shortcut on collections that are in this array. Other collections that share the same external_url will not show this shortcut. Addresses should be provided as strings. Defaults to an empty array [] |
