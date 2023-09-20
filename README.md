@@ -196,7 +196,7 @@ The utilization of the `external_url` property, as stipulated in current token s
 
    Alternatively, provide users with a prompt on every collection page, letting them decide whether to enable shortcuts. This approach offers more granular permissions compared to a universal setting.
 
-5. **External Link Restrictions**: Only links marked with `prefers_external_target` should be permitted to connect to destinations outside of the `external_url`.
+5. **External Link Restrictions**: Only links marked with `prefersExternalTarget` should be permitted to connect to destinations outside of the `external_url`.
 6. **Proxy Requests**: To prevent the unintentional exposure of user IP addresses, all requests should be routed through a proxy. Such a server can also cache responses, mitigating the risk of unintentionally overburdening project servers.
 <img src='https://github.com/phantom/shortcuts/assets/60185486/1e903827-391e-4c5a-8126-bbd407be7f5f' alt='phantom privacy proxy diagram'/>
 
@@ -207,7 +207,7 @@ In light of the aforementioned security concerns, Phantom has instituted a rigor
 For projects interested in this integration, please complete our survey for further consideration: [Phantom Features Survey](https://surveymonkey.com/r/phantomfeatures).
 
 ## Examples
-Composition is the true power of Shortcuts, instead of trying to come up with all possible use cases. Allow the flexibility to mix and match options. These are some examples.
+Composition is the true power of Shortcuts. These are some examples to get you started.
 
 ### Mobile
 
@@ -221,7 +221,7 @@ Composition is the true power of Shortcuts, instead of trying to come up with al
 }
 ```
 
-To enable experiences that require the user to go into another app or website we recommend using **prefersExternalTarget**.
+To enable experiences that require the user to go into another app or website we recommend using `prefersExternalTarget`.
 
 [external-flow](https://github.com/phantom/shortcuts/assets/60185486/8e6a723b-3895-4ebc-9fc8-d21b3fa553ba)
 
@@ -235,7 +235,7 @@ To enable experiences that require the user to go into another app or website we
 }
 ```
 
-Taking full advantage of the extra available space. Developers could tailored unique experiences for their users.
+Taking full advantage of the extra available space. Developers could tailor unique experiences for their users.
 
 [Immerse Experience](https://github.com/phantom/shortcuts/assets/60185486/98a83327-1c2c-44fb-ab50-23742cdbeb3e)
 
@@ -248,7 +248,7 @@ Taking full advantage of the extra available space. Developers could tailored un
 }
 ```
 
-Potentially, most use cases are to redirect users to specific features in their dApps. By providing placeholders, wallets can fill in the required information for the dApp to perform their actions.
+Potentially, most use cases are to redirect users to specific features in their dApps. By providing placeholders, platforms can fill in the required information for the dApp to perform their actions.
 
 In this example `{{tokenID}}` will be replaced with the collectible id
 
@@ -265,12 +265,7 @@ In this example `{{tokenID}}` will be replaced with the collectible id
 }
 ```
 
-A more advanced of examples, by targeting features that the wallets already supports. Developers could interact with anything the wallet exposes.
-
-- https://phantom.app/ul/send?source={{tokenId}}&amount=1
-- https://phantom.app/ul/swap?source={{tokenId}}&destination=0x&amount=1
-- etc
-
+For a slew of more advanced examples, you can target features that wallets already support. Developers can interact with any property the wallet exposes.
 To prevent broken experiences an optional platform modifier can be supplied to limit where the shortcut should be displayed.
 
 [Link to Solana Pay](https://github.com/phantom/shortcuts/assets/60185486/a0d435f3-2a9f-4335-bd69-4266f149145d)
@@ -286,31 +281,16 @@ To prevent broken experiences an optional platform modifier can be supplied to l
 }
 ```
 
-Similar to the Solana pay examples, any Universal Link could be used to generated shortcuts.
+Similar to the Solana pay examples, any Universal Link can be used to generated shortcuts.
 
-Limited to mobile platforms only as Dialect is only supported in mobile as well.
+Limited to only mobile platforms as Dialect is only supported on mobile as well.
 
 [Cross-app integrations](https://github.com/phantom/shortcuts/assets/60185486/4a376bb8-ad36-41e5-9a1b-fa06ce7b43e2)
 
 ### Extension
-
-#### Seemless dApp Interaction
-    
-    Prominent display on the collectable details and into a target dApp with Auto-Connect
-    
-    ```jsx
-    {
-      "label": "I'm feeling lucky!",
-      "uri": "https://www.degencoinflip.com/deeplink?amount=0.05&side=T",
-      "prefersExternalTarget": true,
-      "isPrimary": true
-    }
-    ```
-    
-    [quick-flip](https://github.com/phantom/shortcuts/assets/60185486/66b4680d-5c26-40a3-81de-9f98d6dca542)
     
 #### Direct users to partners
     
-    Projects can partner with providers to do things like loans and provide quick access for users to leverage the partnership
-    
-    [sharky.mp4](https://github.com/phantom/shortcuts/assets/60185486/48384f06-1f9a-40d0-abb7-5bd74091b068)
+Projects can partner with providers to do things like loans and provide quick access for users to leverage the partnership
+
+[sharky.mp4](https://github.com/phantom/shortcuts/assets/60185486/48384f06-1f9a-40d0-abb7-5bd74091b068)
