@@ -1,3 +1,22 @@
+# Table of Contents
+- [Wallet Shortcuts](#wallet-shortcuts)
+  - [Schema object](#schema-object)
+  - [Shortcut object](#shortcut-object)
+  - [Implementation](#implementation)
+    - [Guide For Builders](#guide-for-builders)
+    - [For Platforms (Wallets/Marketplaces)](#for-platforms-walletsmarketplaces)
+  - [Security Considerations](#security-considerations)
+    - [Recommendations for Implementing Platforms](#recommendations-for-implementing-platforms)
+    - [Phantom Implementation](#phantom-implementation)
+  - [Examples](#examples)
+    - [Mobile](#mobile)
+      - [External links (Socials)](#external-links-socials)
+      - [Immerse experiences (Gaming)](#immerse-experiences-gaming)
+      - [Internal dApp features (Famous Foxes, Staking)](#internal-dapp-features-famous-foxes-staking)
+      - [Link back into the wallet itself (Solana pay, arbitrary transactions)](#link-back-into-the-wallet-itself-solana-pay-arbitrary-transactions)
+      - [Cross-app integrations (Dialect, Communications)](#cross-app-integrations-dialect-communications)
+    - [Extension](#extension)
+
 # Wallet Shortcuts:
 
 Wallet Shortcuts is a specification for how a client should request resources be fetched, and how a server should respond to those requests. Wallet Shortcuts can be easily extended with composition to fully take advantage of a client feature set or providing new functionality.
