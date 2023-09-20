@@ -186,8 +186,8 @@ The utilization of the `external_url` property, as stipulated in current token s
 
 1. **Trusted Collections**: Only query shortcuts for collections that are neither flagged nor marked as spam. Consider prioritizing collections that have undergone verification.
 2. **Allowlist**: Introduce an `allowlist.json` containing a pre-defined list of reputable sources.
-3. **Third-Party Verification**: Align with verification mechanisms from platforms like Magic Eden and OpenSea. Consider only showing shortcuts collections verified by these entities.
-4. **User Permissions**: Propose three user settings:
+3. **Third-Party Verification**: Align with verification mechanisms from platforms like Magic Eden and OpenSea. Consider only showing shortcuts on collections verified by these entities.
+4. **User Permissions**: Consider surfacing an array of user settings such as:
 
    - Allow shortcuts only from partner collections.
    - Allow shortcuts from all collections.
@@ -203,9 +203,10 @@ The utilization of the `external_url` property, as stipulated in current token s
 
 In light of the aforementioned security concerns, Phantom has instituted a rigorous vetting process for all projects. Currently, each project is manually assessed to ensure its alignment with our security standards.
 
-For projects interested in this integration, please complete our survey for further consideration: [Advanced Feature Interest Form](https://surveymonkey.com/r/phantomfeatures).
+For projects interested in this integration, please complete our [Advanced Feature Interest Form](https://surveymonkey.com/r/phantomfeatures).
 
 ## Examples
+
 Composition is the true power of Shortcuts. These are some examples to get you started.
 
 ### Mobile
@@ -234,7 +235,7 @@ To enable experiences that require the user to go into another app or website we
 }
 ```
 
-Taking full advantage of the extra available space. Developers could tailor unique experiences for their users.
+By setting a shortcuts's `preferredPresentation` to `immerse`, developers can take full advantage of the extra available and tailor unique experiences for their users.
 
 [Immerse Experience](https://github.com/phantom/shortcuts/assets/60185486/50846eaf-7c6a-4afb-a52d-e4f0b7c3c658)
 
@@ -247,7 +248,7 @@ Taking full advantage of the extra available space. Developers could tailor uniq
 }
 ```
 
-Potentially, most use cases are to redirect users to specific features in their dApps. By providing placeholders, platforms can fill in the required information for the dApp to perform their actions.
+Many use cases involve redirecting users to specific features in a dApp. By providing placeholders, platforms can fill in the required information for the dApp to perform their actions.
 
 In this example `{{tokenID}}` will be replaced with the collectible id
 
