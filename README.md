@@ -235,6 +235,7 @@ To enable experiences that require the user to go into another app or website we
 ```
 
 Taking full advantage of the extra available space. Developers could tailor unique experiences for their users.
+
 [Immerse Experience](https://github.com/phantom/shortcuts/assets/60185486/50846eaf-7c6a-4afb-a52d-e4f0b7c3c658)
 
 #### Internal dApp features (Famous Foxes, Staking)
@@ -249,6 +250,7 @@ Taking full advantage of the extra available space. Developers could tailor uniq
 Potentially, most use cases are to redirect users to specific features in their dApps. By providing placeholders, platforms can fill in the required information for the dApp to perform their actions.
 
 In this example `{{tokenID}}` will be replaced with the collectible id
+
 [internal-dapp](https://github.com/phantom/shortcuts/assets/60185486/7ec68228-71c5-474b-bae2-77943bc437d0)
 
 #### Link back into the wallet itself (Solana pay, arbitrary transactions)
@@ -281,6 +283,7 @@ To prevent broken experiences, an optional platform modifier can be supplied to 
 Similar to the Solana pay examples, any Universal Link can be used to generated shortcuts.
 
 Limited to only mobile platforms as Dialect is only supported on mobile as well.
+
 [Cross-app integrations](https://github.com/phantom/shortcuts/assets/60185486/199b4ce6-3097-44e5-835c-efdb4111d0e1)
 
 ### Extension
@@ -288,4 +291,5 @@ Limited to only mobile platforms as Dialect is only supported on mobile as well.
 #### Direct users to partners
     
 Projects can partner with providers to do things like loans and provide quick access for users to leverage the partnership
+
 [sharky.mp4](https://github.com/phantom/shortcuts/assets/60185486/575675db-350b-49e4-9aca-42772bc46530)
