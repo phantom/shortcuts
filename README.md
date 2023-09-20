@@ -51,7 +51,6 @@ In this example, {{tokenId}} will be replaced with the on-chain identifier of th
 ## Implementation
 
 ### Guide For Builders
-### 
 
 - For use of Shortcuts we request that all partners follow the following guidelines
     
@@ -64,7 +63,7 @@ In this example, {{tokenId}} will be replaced with the on-chain identifier of th
     - Tip
     - Vote
     
-    **Note**: *If you’d like to do something outside these bounds, please share your plans with @Brian Friel or @Noah Hein so we can discuss your plans with you. We are fine with whatever links you choose but want to be sure you are set up with everything you need to make Shortcuts successful for you.* 
+    **Note**: *If you’d like to do something outside these bounds, please share your plans with us so we can discuss your plans with you. We are fine with whatever links you choose but want to be sure you are set up with everything you need to make Shortcuts successful for you.* 
     
     ### Use one of the pre-approved icons
     
@@ -91,10 +90,6 @@ In this example, {{tokenId}} will be replaced with the on-chain identifier of th
     17. gaming-2
     18. generic-link
     19. generic-add
-    
-    ![Screenshot 2023-09-07 at 1.50.53 PM.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/d533cfd5-ac13-41a6-8de4-92357d343c41/28036392-9ca5-4a55-a2b2-6b9166e4e288/Screenshot_2023-09-07_at_1.50.53_PM.png)
-    
-    ![Screenshot 2023-09-07 at 1.50.44 PM.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/d533cfd5-ac13-41a6-8de4-92357d343c41/3afe188c-dd03-4d46-bb01-b661474cc4f0/Screenshot_2023-09-07_at_1.50.44_PM.png)
     
     ### Use copy with the following guidelines
     
@@ -141,9 +136,134 @@ For projects that want to show shortcuts to their users, you will need to start 
     
     [shortcutsguidevid.mp4](https://prod-files-secure.s3.us-west-2.amazonaws.com/d533cfd5-ac13-41a6-8de4-92357d343c41/4ea3ebe6-c1d4-4529-bd87-a9dd666376d9/shortcutsguidevid.mp4)
     
-    🗒️ We respect different paths in addition to the domain. So you can have `[example.com/some-number/shortcuts.json](http://example.com/{artist}/shortcuts.json)` as well. As long as the NFT has the corresponding `external_url`, we will respect it.
+    🗒️ We respect different paths in addition to the domain. So you can have `example.com/some-identifier/shortcuts.json` as well. As long as the NFT has the corresponding `external_url`, we will respect it.
     
     
 
-Builders are not limited to static URLs. There are placeholder variables that can be replaced by the wallet providers. These variables include `{{collectionId}}`, `{{tokenId}}`, and `{ownerAddress}`. Please let @Noah Hein know if you want us to expose other variables.
+Builders are not limited to static URLs. There are placeholder variables that can be replaced by the platform providers. These variables include `{{collectionId}}`, `{{tokenId}}`, and `{ownerAddress}`. Please let us know if you want us to expose other variables.
+
+- Example
+
+    In this example, {{tokenId}} will be replaced with the on-chain identifier of the token displaying this shortcut
+
+    ```json
+    {
+      label: "Redeem",
+      uri: "https://example.com/redeem/{{tokenId}}",
+      prefersExternalTarget: false,
+      icon: "mint",
+    }
+    ```
+
+### For Platforms (Wallets/Marketplaces)
+We recommend adding a privacy layer between the wallet and projects to obfuscate the user, the following flow describes Phantom’s implementation.
+
+
+
+## Examples
+## Mobile
+
+### External links (Socials)
+
+```json
+{
+  "label": "View on instagram",
+  "uri": "https://instagram.com/famousfoxfed",
+  "prefersExternalTarget": true
+}
+```
+
+To enable experiences that require the user to go into another app or website we recommend using **prefersExternalTarget**.
+
+[external.mov](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/23e584b7-82e3-49ed-aecc-a8e2b46725f0/external.mov)
+
+### Immerse experiences (Gaming)
+
+```json
+{
+  "label": "Play now",
+  "uri": "https://shanksy.xyz/play/{{tokenId}}",
+  "preferredPresentation": "immerse"
+}
+```
+
+Taking full advantage of the extra available space. Developers could tailored unique experiences for their users.
+
+[Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/192e332b-3345-4eec-bd99-79c25f70122b/Untitled.qt)
+
+### Internal dApp features (Famous Foxes, Staking)
+
+```json
+{
+  "label": "Stake",
+  "uri": "https://famousfoxes.com/stake/{{tokenId}}"
+}
+```
+
+Potentially, most use cases are to redirect users to specific features in their dApps. By providing placeholders, wallets can fill in the required information for the dApp to perform their actions.
+
+In this example `{{tokenID}}` will be replaced with the collectible id
+
+[Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9cb99e0f-87ac-4198-a0c1-2b3b697bfce2/Untitled.qt)
+
+### Link back into the wallet itself (Solana pay, arbitrary transactions)
+
+```json
+{
+  "label": "Tip me!",
+  "uri": "solana:https%3A%2F%2Fsolana-pay-marty-mcflai.vercel.app%2Fapi%3Frecipient%3DEqaavRGuaN4myvgvqs8fMecQ7Y1vGgQUjgZpLsJWG7Nn%26amount%3D0.001%26label%3DKoffii%26reference%3DEqaavRGuaN4myvgvqs8fMecQ7Y1vGgQUjgZpLsJWG7Nn",
+  "prefersExternalTarget": true,
+  "platform": "mobile"
+}
+```
+
+A more advanced of examples, by targeting features that the wallets already supports. Developers could interact with anything the wallet exposes.
+
+- https://phantom.app/ul/send?source={{tokenId}}&amount=1
+- https://phantom.app/ul/swap?source={{tokenId}}&destination=0x&amount=1
+- etc
+
+To prevent broken experiences an optional platform modifier can be supplied to limit where the shortcut should be displayed.
+
+[Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a9ddf158-c598-4095-b9cb-e992142e568d/Untitled.mp4)
+
+### Cross-app integrations (Dialect, Communications)
+
+```json
+{
+  "label": "Join chat",
+  "uri": "https://app.dialect.to/join?id={{tokenId}}",
+  "prefersExternalTarget": true,
+  "platform": "mobile"
+}
+```
+
+Similar to the Solana pay examples, any Universal Link could be used to generated shortcuts.
+
+Limited to mobile platforms only as Dialect is only supported in mobile as well.
+
+[RPReplay_Final1688678108.MP4](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1851aeee-79be-429d-b907-1c5110734ff8/RPReplay_Final1688678108.mp4)
+
+## Extension
+
+- **Seemless dApp Interaction**
+    
+    Prominent display on the collectable details and into a target dApp with Auto-Connect
+    
+    ```jsx
+    {
+      "label": "I'm feeling lucky!",
+      "uri": "https://www.degencoinflip.com/deeplink?amount=0.05&side=T",
+      "prefersExternalTarget": true,
+      "isPrimary": true
+    }
+    ```
+    
+    [quick-flip.mp4](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1a6fa011-cc40-4031-ae47-f778e681311f/quick-flip.mp4)
+    
+- **Direct users to partners**
+    
+    Projects can partner with providers to do things like loans and provide quick access for users to leverage the partnership
+    
+    [sharky.mp4](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/33992838-28be-4cb3-809a-7d24b7820a4f/sharky.mp4)
 
