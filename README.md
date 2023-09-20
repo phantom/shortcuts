@@ -205,8 +205,6 @@ For projects interested in this integration, please complete our survey for furt
 ## Examples
 Composition is the true power of Wallet Shortcuts, instead of trying to come up with all possible use cases. Allow the flexibility to mix and match options. These are some examples.
 
-<img width="1602" alt="correct/incorrect shortcuts example" src="https://github.com/phantom/shortcuts/assets/60185486/726357a6-56f0-49c5-8acb-0925e771a24a">
-
 ### Mobile
 
 #### External links (Socials)
