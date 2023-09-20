@@ -1,4 +1,25 @@
+
 # Shortcuts
+
+## Table of Contents
+- [Wallet Shortcuts](#wallet-shortcuts)
+  - [Schema object](#schema-object)
+  - [Shortcut object](#shortcut-object)
+  - [Implementation](#implementation)
+    - [Guide For Builders](#guide-for-builders)
+    - [For Platforms (Wallets/Marketplaces)](#for-platforms-walletsmarketplaces)
+  - [Security Considerations](#security-considerations)
+    - [Recommendations for Implementing Platforms](#recommendations-for-implementing-platforms)
+    - [Phantom Implementation](#phantom-implementation)
+  - [Examples](#examples)
+    - [Mobile](#mobile)
+      - [External links (Socials)](#external-links-socials)
+      - [Immerse experiences (Gaming)](#immerse-experiences-gaming)
+      - [Internal dApp features (Famous Foxes, Staking)](#internal-dapp-features-famous-foxes-staking)
+      - [Link back into the wallet itself (Solana pay, arbitrary transactions)](#link-back-into-the-wallet-itself-solana-pay-arbitrary-transactions)
+      - [Cross-app integrations (Dialect, Communications)](#cross-app-integrations-dialect-communications)
+    - [Extension](#extension)
+
 
 ## Introduction
 
@@ -51,6 +72,7 @@ When designing shortcuts, creators are not limited to static URLs. Instead, crea
 }
 ```
 
+
 In this example, `{{tokenId}}` will be replaced with the on-chain identifier of the token displaying this shortcut.
 
 ## Implementation
@@ -73,8 +95,6 @@ For use of Shortcuts we request that all collections adhere to the following gui
 
 #### Use one of the pre-approved icons
 
-[**Figma file**](https://www.figma.com/file/qAIYrXDjrrFADZmT6iTEU0/Shortcuts?type=design&mode=design)
-
 1. `vote`
 2. `vote-2`
 3. `stake`
@@ -95,6 +115,9 @@ For use of Shortcuts we request that all collections adhere to the following gui
 18. `generic-link`
 19. `generic-add`
 
+ ![Wallet Shortcut Icons (Social)](https://github.com/phantom/shortcuts/assets/60185486/f8960144-1aa7-4c9e-b7f7-3aa97b594c7d)
+ ![Wallet Shortcut Icons (Actions)](https://github.com/phantom/shortcuts/assets/60185486/921b044b-fbc0-4367-8979-7b33330373e1)
+
 **Example**
 
 ```json
@@ -108,7 +131,7 @@ For use of Shortcuts we request that all collections adhere to the following gui
 - All Shortcuts should start with a verb to solidify the action you want the user to take
 - Try to use 2-3 word phrases
   - Ensure that labels never wrap to a second line
-- If the Shortcut isn’t an action (e.g. “Stake” or “Mint”) you can always use “View \_\_\_\_” that way it still starts with a verb
+- If the Shortcut isn’t an action (e.g. “Stake” or “Mint”) you can always use “View ____” that way it still starts with a verb
 
 **Examples**
 
@@ -149,10 +172,10 @@ For projects that want to show shortcuts to their users, you will need to start 
   ```
 
   In the above example, Phantom would render shortcuts like this 👇
-  [shortcutsguidevid.mp4](https://prod-files-secure.s3.us-west-2.amazonaws.com/d533cfd5-ac13-41a6-8de4-92357d343c41/4ea3ebe6-c1d4-4529-bd87-a9dd666376d9/shortcutsguidevid.mp4)
+    [shortcuts-with-path-external-url](https://github.com/phantom/shortcuts/assets/60185486/622ce003-09a0-4e7e-8509-72d3838f8c62)
 
   > **Tip:** Phantom will respect different paths in addition to the domain. For example, you can have `example.com/some-identifier/shortcuts.json`. As long as the NFT has that path in its corresponding `external_url`, we will respect it.
-
+    
 ## Security Considerations
 
 The utilization of the `external_url` property, as stipulated in current token standards, is recognized by Phantom as potentially hazardous. To ensure the safety of users, Phantom presents a cautionary dialogue when users engage with this property. To bolster security, it's essential to enact several preventive measures.
@@ -180,6 +203,9 @@ In light of the aforementioned security concerns, Phantom has instituted a rigor
 For projects interested in this integration, please complete our survey for further consideration: [Phantom Features Survey](https://surveymonkey.com/r/phantomfeatures).
 
 ## Examples
+Composition is the true power of Wallet Shortcuts, instead of trying to come up with all possible use cases. Allow the flexibility to mix and match options. These are some examples.
+
+<img width="1602" alt="correct/incorrect shortcuts example" src="https://github.com/phantom/shortcuts/assets/60185486/726357a6-56f0-49c5-8acb-0925e771a24a">
 
 ### Mobile
 
@@ -195,7 +221,7 @@ For projects interested in this integration, please complete our survey for furt
 
 To enable experiences that require the user to go into another app or website we recommend using **prefersExternalTarget**.
 
-[external.mov](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/23e584b7-82e3-49ed-aecc-a8e2b46725f0/external.mov)
+[external-flow](https://github.com/phantom/shortcuts/assets/60185486/8e6a723b-3895-4ebc-9fc8-d21b3fa553ba)
 
 #### Immerse experiences (Gaming)
 
@@ -209,7 +235,7 @@ To enable experiences that require the user to go into another app or website we
 
 Taking full advantage of the extra available space. Developers could tailored unique experiences for their users.
 
-[Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/192e332b-3345-4eec-bd99-79c25f70122b/Untitled.qt)
+[Immerse Experience](https://github.com/phantom/shortcuts/assets/60185486/98a83327-1c2c-44fb-ab50-23742cdbeb3e)
 
 #### Internal dApp features (Famous Foxes, Staking)
 
@@ -224,7 +250,7 @@ Potentially, most use cases are to redirect users to specific features in their 
 
 In this example `{{tokenID}}` will be replaced with the collectible id
 
-[Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9cb99e0f-87ac-4198-a0c1-2b3b697bfce2/Untitled.qt)
+[internal-dapp](https://github.com/phantom/shortcuts/assets/60185486/a28f0538-7fba-48c8-a9c3-4242d8a718b7)
 
 #### Link back into the wallet itself (Solana pay, arbitrary transactions)
 
@@ -245,7 +271,7 @@ A more advanced of examples, by targeting features that the wallets already supp
 
 To prevent broken experiences an optional platform modifier can be supplied to limit where the shortcut should be displayed.
 
-[Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a9ddf158-c598-4095-b9cb-e992142e568d/Untitled.mp4)
+[Link to Solana Pay](https://github.com/phantom/shortcuts/assets/60185486/a0d435f3-2a9f-4335-bd69-4266f149145d)
 
 #### Cross-app integrations (Dialect, Communications)
 
@@ -262,26 +288,27 @@ Similar to the Solana pay examples, any Universal Link could be used to generate
 
 Limited to mobile platforms only as Dialect is only supported in mobile as well.
 
-[RPReplay_Final1688678108.MP4](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1851aeee-79be-429d-b907-1c5110734ff8/RPReplay_Final1688678108.mp4)
+[Cross-app integrations](https://github.com/phantom/shortcuts/assets/60185486/4a376bb8-ad36-41e5-9a1b-fa06ce7b43e2)
 
 ### Extension
 
-#### dApp Intreactions
-
-Prominent display on the collectable details and into a target dApp with Auto-Connect
-
-```jsx
-{
-  "label": "I'm feeling lucky!",
-  "uri": "https://www.degencoinflip.com/deeplink?amount=0.05&side=T",
-  "prefersExternalTarget": true,
-  "isPrimary": true
-}
-```
-
-[quick-flip.mp4](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1a6fa011-cc40-4031-ae47-f778e681311f/quick-flip.mp4)
-
-#### Direct users to partners
-
-Projects can partner with providers to do things like loans and provide quick access for users to leverage the partnership
-[sharky.mp4](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/33992838-28be-4cb3-809a-7d24b7820a4f/sharky.mp4)
+####Seemless dApp Interaction
+    
+    Prominent display on the collectable details and into a target dApp with Auto-Connect
+    
+    ```jsx
+    {
+      "label": "I'm feeling lucky!",
+      "uri": "https://www.degencoinflip.com/deeplink?amount=0.05&side=T",
+      "prefersExternalTarget": true,
+      "isPrimary": true
+    }
+    ```
+    
+    [quick-flip](https://github.com/phantom/shortcuts/assets/60185486/66b4680d-5c26-40a3-81de-9f98d6dca542)
+    
+####Direct users to partners
+    
+    Projects can partner with providers to do things like loans and provide quick access for users to leverage the partnership
+    
+    [sharky.mp4](https://github.com/phantom/shortcuts/assets/60185486/48384f06-1f9a-40d0-abb7-5bd74091b068)
