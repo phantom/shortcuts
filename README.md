@@ -152,8 +152,8 @@ For projects that want to show shortcuts to their users, you will need to start 
     ```
     
     Phantom would render shortcuts like this 👇
-    
-    [shortcutsguidevid.mp4](https://prod-files-secure.s3.us-west-2.amazonaws.com/d533cfd5-ac13-41a6-8de4-92357d343c41/4ea3ebe6-c1d4-4529-bd87-a9dd666376d9/shortcutsguidevid.mp4)
+
+    [shortcuts-with-path-external-url](https://github.com/phantom/shortcuts/assets/60185486/622ce003-09a0-4e7e-8509-72d3838f8c62)
     
     🗒️ We respect different paths in addition to the domain. So you can have `example.com/some-identifier/shortcuts.json` as well. As long as the NFT has the corresponding `external_url`, we will respect it.
     
@@ -176,7 +176,8 @@ Builders are not limited to static URLs. There are placeholder variables that ca
 
 ### For Platforms (Wallets/Marketplaces)
 We recommend adding a privacy layer between the wallet and projects to obfuscate the user, the following flow describes Phantom’s implementation.
-//// Phantom diagram here
+![Shortcuts-Proxy-Diagram](https://github.com/phantom/shortcuts/assets/60185486/b0ee172b-a3b7-4a27-ab4b-ad72784838a8)
+
 
 ## Security Considerations
 
@@ -204,6 +205,10 @@ For projects interested in this integration, please complete our survey for furt
 
 
 ## Examples
+Composition is the true power of Wallet Shortcuts, instead of trying to come up with all possible use cases. Allow the flexibility to mix and match options. These are some examples.
+
+<img width="1602" alt="correct/incorrect shortcuts example" src="https://github.com/phantom/shortcuts/assets/60185486/726357a6-56f0-49c5-8acb-0925e771a24a">
+
 ### Mobile
 
 #### External links (Socials)
