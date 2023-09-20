@@ -57,7 +57,7 @@ A shortcut object represents a single action that can be performed in a wallet c
 
 - **Example**
 
-    ```json
+    ```javascript
     {
         label: "Redeem",
         uri: "https://phantom.app/redeem/{{tokenId}}",
@@ -165,7 +165,7 @@ Builders are not limited to static URLs. There are placeholder variables that ca
 
     In this example, {{tokenId}} will be replaced with the on-chain identifier of the token displaying this shortcut
 
-    ```json
+    ```javascript
     {
       label: "Redeem",
       uri: "https://example.com/redeem/{{tokenId}}",
