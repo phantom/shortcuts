@@ -46,6 +46,104 @@ A shortcut object represents a single action that can be performed in a wallet c
         icon: "mint"
     }
     ```
+In this example, {{tokenId}} will be replaced with the on-chain identifier of the token displaying this shortcut
 
-[...]
+## Implementation
+
+### Guide For Builders
+### 
+
+- For use of Shortcuts we request that all partners follow the following guidelines
+    
+    ### Your Shortcuts fall into one of the following categories
+    
+    - Stake
+    - Socials (Instagram, Twitter/X, Discord, Telegram)
+    - Message feature
+    - Mint
+    - Tip
+    - Vote
+    
+    **Note**: *If you’d like to do something outside these bounds, please share your plans with @Brian Friel or @Noah Hein so we can discuss your plans with you. We are fine with whatever links you choose but want to be sure you are set up with everything you need to make Shortcuts successful for you.* 
+    
+    ### Use one of the pre-approved icons
+    
+    [**Figma file**](https://www.figma.com/file/qAIYrXDjrrFADZmT6iTEU0/Shortcuts?type=design&mode=design)
+    
+    { icon: “name” }
+    
+    1. vote
+    2. vote-2
+    3. stake
+    4. stake-2
+    5. view
+    6. chat
+    7. tip
+    8. mint
+    9. mint-2
+    10. discord
+    11. twitter
+    12. x
+    13. instagram
+    14. telegram
+    15. leaderboard
+    16. gaming
+    17. gaming-2
+    18. generic-link
+    19. generic-add
+    
+    ![Screenshot 2023-09-07 at 1.50.53 PM.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/d533cfd5-ac13-41a6-8de4-92357d343c41/28036392-9ca5-4a55-a2b2-6b9166e4e288/Screenshot_2023-09-07_at_1.50.53_PM.png)
+    
+    ![Screenshot 2023-09-07 at 1.50.44 PM.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/d533cfd5-ac13-41a6-8de4-92357d343c41/3afe188c-dd03-4d46-bb01-b661474cc4f0/Screenshot_2023-09-07_at_1.50.44_PM.png)
+    
+    ### Use copy with the following guidelines
+    
+    1. All Shortcuts should start with a verb to solidify the action you want the user to take
+    2. Try to use 2-3 word phrases 
+        1. Ensure the text never wraps to a second line 
+    3. If the Shortcut isn’t an action (like “Stake” or “Mint”) you can always use “View ____” that way it still starts with a verb
+    4. **Examples** 
+        1. “Join [project name] Telegram”
+        2. “Mint NFT”
+        3. “View mint page”
+        4. “Tip artist”
+
+For projects that want to show shortcuts to their users, you will need to start by ensuring that your NFT(s) have an `external_url` present in their metadata. If they do, when a user clicks on an NFT in their collection, the wallet will fetch the `external_url` + `/shortcuts.json`.
+
+- Example
+    
+    NFT metadata’s `external_url` = `https://example.com`
+    wallet will request `https://example.com/shortcuts.json`
+    response from `https://example.com/shortcuts.json` looks like 
+    
+    ```json
+    {
+      "version": 1,
+      "shortcuts": [
+        {
+          "label": "Tip Artist",
+          "uri": "solana:ART5dr4bDic2sQVZoFheEmUxwQq5VGSx9he7JxHcXNQD?label=Drip+Thanks",
+          "platform": "mobile"
+        },
+        {
+          "label": "View Artist Page",
+          "uri": "https://drip.haus/degenpoet"
+        },
+        {
+          "label": "View Vault",
+          "uri": "https://drip.haus/vault"
+        }
+      ]
+    }
+    ```
+    
+    Phantom would render shortcuts like this 👇
+    
+    [shortcutsguidevid.mp4](https://prod-files-secure.s3.us-west-2.amazonaws.com/d533cfd5-ac13-41a6-8de4-92357d343c41/4ea3ebe6-c1d4-4529-bd87-a9dd666376d9/shortcutsguidevid.mp4)
+    
+    🗒️ We respect different paths in addition to the domain. So you can have `[example.com/some-number/shortcuts.json](http://example.com/{artist}/shortcuts.json)` as well. As long as the NFT has the corresponding `external_url`, we will respect it.
+    
+    
+
+Builders are not limited to static URLs. There are placeholder variables that can be replaced by the wallet providers. These variables include `{{collectionId}}`, `{{tokenId}}`, and `{ownerAddress}`. Please let @Noah Hein know if you want us to expose other variables.
 
