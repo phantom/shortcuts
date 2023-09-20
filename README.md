@@ -302,7 +302,7 @@ Limited to mobile platforms only as Dialect is only supported in mobile as well.
     }
     ```
     
-    [quick-flip.mp4](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1a6fa011-cc40-4031-ae47-f778e681311f/quick-flip.mp4)
+    [quick-flip.mp4](quick-flip.mp4)
     
 - **Direct users to partners**
     
