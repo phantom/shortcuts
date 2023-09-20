@@ -25,6 +25,9 @@
 
 [Shortcuts](https://phantom.app/learn/blog/shortcuts) is a feature that enables NFT collections to surface a curated list of links to their holders. Wallets, and other clients such as NFT marketplaces, can request shortcuts for a given collection by querying the `external_url` field specified in a given NFT's metadata and appending a `/shortcuts.json` path. Shortcuts are hosted and maintained by NFT creators themselves, and should adhere to the following specification.
 
+[shortcuts](https://github.com/phantom/shortcuts/assets/60185486/6c2ff64c-c2e1-42c0-9e76-b5830e835a4d)
+
+
 ## Specification
 
 ### Schema object
