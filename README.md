@@ -308,5 +308,5 @@ Limited to mobile platforms only as Dialect is only supported in mobile as well.
     
     Projects can partner with providers to do things like loans and provide quick access for users to leverage the partnership
     
-    [sharky.mp4](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/33992838-28be-4cb3-809a-7d24b7820a4f/sharky.mp4)
+    [sharky.mp4](/sharky.mp4)
 
