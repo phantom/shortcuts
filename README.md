@@ -197,7 +197,7 @@ The utilization of the `external_url` property, as stipulated in current token s
 
 5. **External Link Restrictions**: Only links marked with `prefersExternalTarget` should be permitted to connect to destinations outside of the `external_url`.
 6. **Proxy Requests**: To prevent the unintentional exposure of user IP addresses, all requests should be routed through a proxy. Such a server can also cache responses, mitigating the risk of unintentionally overburdening project servers.
-<img src='https://github.com/phantom/shortcuts/assets/60185486/1e903827-391e-4c5a-8126-bbd407be7f5f' alt='phantom privacy proxy diagram'/>
+<img src='https://github.com/phantom/shortcuts/assets/60185486/cf0fdea9-ea08-44d6-a26e-abcff94f54ca' alt='phantom privacy proxy diagram'/>
 
 ### Phantom Implementation
 
@@ -222,7 +222,7 @@ Composition is the true power of Shortcuts. These are some examples to get you s
 
 To enable experiences that require the user to go into another app or website we recommend using `prefersExternalTarget`.
 
-[external-flow](https://github.com/phantom/shortcuts/assets/60185486/8e6a723b-3895-4ebc-9fc8-d21b3fa553ba)
+[external-flow](https://github.com/phantom/shortcuts/assets/60185486/1d625533-fa34-4538-b436-0fdf5e3d7030)
 
 #### Immerse experiences (Gaming)
 
@@ -235,8 +235,7 @@ To enable experiences that require the user to go into another app or website we
 ```
 
 Taking full advantage of the extra available space. Developers could tailor unique experiences for their users.
-
-[Immerse Experience](https://github.com/phantom/shortcuts/assets/60185486/98a83327-1c2c-44fb-ab50-23742cdbeb3e)
+[Immerse Experience](https://github.com/phantom/shortcuts/assets/60185486/50846eaf-7c6a-4afb-a52d-e4f0b7c3c658)
 
 #### Internal dApp features (Famous Foxes, Staking)
 
@@ -250,8 +249,7 @@ Taking full advantage of the extra available space. Developers could tailor uniq
 Potentially, most use cases are to redirect users to specific features in their dApps. By providing placeholders, platforms can fill in the required information for the dApp to perform their actions.
 
 In this example `{{tokenID}}` will be replaced with the collectible id
-
-[internal-dapp](https://github.com/phantom/shortcuts/assets/60185486/a28f0538-7fba-48c8-a9c3-4242d8a718b7)
+[internal-dapp](https://github.com/phantom/shortcuts/assets/60185486/7ec68228-71c5-474b-bae2-77943bc437d0)
 
 #### Link back into the wallet itself (Solana pay, arbitrary transactions)
 
@@ -267,7 +265,7 @@ In this example `{{tokenID}}` will be replaced with the collectible id
 For a slew of more advanced examples, you can target features that wallets already support. Developers can interact with any property the wallet exposes.
 To prevent broken experiences, an optional platform modifier can be supplied to limit where the shortcut should be displayed.
 
-[Link to Solana Pay](https://github.com/phantom/shortcuts/assets/60185486/a0d435f3-2a9f-4335-bd69-4266f149145d)
+[Link to Solana Pay](https://github.com/phantom/shortcuts/assets/60185486/48a255bf-5d82-45a8-9e41-4bf82f416edc)
 
 #### Cross-app integrations (Dialect, Communications)
 
