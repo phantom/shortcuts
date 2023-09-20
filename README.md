@@ -21,7 +21,10 @@
 
 [Shortcuts](https://phantom.app/learn/blog/shortcuts) is a feature that enables NFT collections to surface a curated list of links to their holders. Wallets, and other clients such as NFT marketplaces, can request shortcuts for a given collection by querying the `external_url` field specified in a given NFT's metadata and appending a `/shortcuts.json` path. Shortcuts are hosted and maintained by NFT creators themselves, and should adhere to the following specification.
 
-[shortcuts](https://github.com/phantom/shortcuts/assets/60185486/1b6de2e5-104a-4cd4-9d45-cf5bd12cac24)
+[shortcuts](https://github.com/phantom/shortcuts/assets/60185486/ad5fa479-11b2-4c09-b727-74934d5d45a8)
+
+
+
 
 ## Specification
 
@@ -113,8 +116,8 @@ For use of Shortcuts we request that all collections adhere to the following gui
 18. `generic-link`
 19. `generic-add`
 
- ![Wallet Shortcut Icons (Social)](https://github.com/phantom/shortcuts/assets/60185486/f8960144-1aa7-4c9e-b7f7-3aa97b594c7d)
- ![Wallet Shortcut Icons (Actions)](https://github.com/phantom/shortcuts/assets/60185486/921b044b-fbc0-4367-8979-7b33330373e1)
+![Wallet Shortcut Icons (Social)](https://github.com/phantom/shortcuts/assets/60185486/74f9ab69-8aa9-40ef-9c96-2052a0b94a2e)
+![Wallet Shortcut Icons (Actions)](https://github.com/phantom/shortcuts/assets/60185486/86736fb1-a323-4a6b-b1ae-a19d5717ca1e)
 
 **Example**
 
@@ -170,8 +173,8 @@ For projects that want to show shortcuts to their users, you will need to start 
   ```
 
   In the above example, Phantom would render shortcuts like this 👇
-    
-[shortcuts-with-path-external-url](https://github.com/phantom/shortcuts/assets/60185486/622ce003-09a0-4e7e-8509-72d3838f8c62)
+
+[shortcuts-with-path-external-url](https://github.com/phantom/shortcuts/assets/60185486/718c0779-49f2-411f-a5eb-562edcc9a8da)
 
 💡 **Tip:** Phantom will respect different paths in addition to the domain. For example, you can have `example.com/some-identifier/shortcuts.json`. As long as the NFT has that path in its corresponding `external_url`, we will respect it.
     
