@@ -109,10 +109,15 @@ In this example, {{tokenId}} will be replaced with the on-chain identifier of th
     19. generic-add
 
     Here is how some of them look when displayed
+
   ![Wallet Shortcut Icons (Social)](https://github.com/phantom/shortcuts/assets/60185486/f8960144-1aa7-4c9e-b7f7-3aa97b594c7d)
+  
   ![Wallet Shortcut Icons (Actions)](https://github.com/phantom/shortcuts/assets/60185486/921b044b-fbc0-4367-8979-7b33330373e1)
+  
   ![Wallet Shortcut Icons 2](https://github.com/phantom/shortcuts/assets/60185486/c224dd7a-a734-45aa-bc87-4a0227f6e034)
+  
   ![Wallet Shortcut Icons 1](https://github.com/phantom/shortcuts/assets/60185486/b5b93723-f2e9-468a-99d2-cf463f7c9b03)
+  
     
     ### Use copy with the following guidelines
     
