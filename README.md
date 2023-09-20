@@ -186,8 +186,8 @@ The utilization of the `external_url` property, as stipulated in current token s
 ### Recommendations for Implementing Platforms (Wallets/Marketplaces)
 
 1. **Trusted Collections**: Only query shortcuts for collections that are neither flagged nor marked as spam. Consider prioritizing collections that have undergone verification.
-2. **Allowlist**: Introduce an `allowlist.json` containing a pre-defined list of reputable sources and initial launch collaborators.
-3. **Third-Party Verification**: Align with verification mechanisms from platforms like Magic Eden and Open Sea. Only collections verified by these entities should be considered.
+2. **Allowlist**: Introduce an `allowlist.json` containing a pre-defined list of reputable sources.
+3. **Third-Party Verification**: Align with verification mechanisms from platforms like Magic Eden and OpenSea. Consider only showing shortcuts collections verified by these entities.
 4. **User Permissions**: Propose three user settings:
 
    - Allow shortcuts only from partner collections.
