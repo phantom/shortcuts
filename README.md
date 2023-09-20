@@ -218,7 +218,7 @@ For projects interested in this integration, please complete our survey for furt
 
 To enable experiences that require the user to go into another app or website we recommend using **prefersExternalTarget**.
 
-[external.mov](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/23e584b7-82e3-49ed-aecc-a8e2b46725f0/external.mov)
+[external-flow](https://github.com/phantom/shortcuts/assets/60185486/8e6a723b-3895-4ebc-9fc8-d21b3fa553ba)
 
 #### Immerse experiences (Gaming)
 
@@ -232,7 +232,7 @@ To enable experiences that require the user to go into another app or website we
 
 Taking full advantage of the extra available space. Developers could tailored unique experiences for their users.
 
-[Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/192e332b-3345-4eec-bd99-79c25f70122b/Untitled.qt)
+[Immerse Experience](https://github.com/phantom/shortcuts/assets/60185486/98a83327-1c2c-44fb-ab50-23742cdbeb3e)
 
 #### Internal dApp features (Famous Foxes, Staking)
 
@@ -247,7 +247,7 @@ Potentially, most use cases are to redirect users to specific features in their 
 
 In this example `{{tokenID}}` will be replaced with the collectible id
 
-[Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9cb99e0f-87ac-4198-a0c1-2b3b697bfce2/Untitled.qt)
+[internal-dapp](https://github.com/phantom/shortcuts/assets/60185486/a28f0538-7fba-48c8-a9c3-4242d8a718b7)
 
 #### Link back into the wallet itself (Solana pay, arbitrary transactions)
 
