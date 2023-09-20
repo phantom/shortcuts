@@ -267,8 +267,7 @@ A more advanced of examples, by targeting features that the wallets already supp
 - etc
 
 To prevent broken experiences an optional platform modifier can be supplied to limit where the shortcut should be displayed.
-
-[Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a9ddf158-c598-4095-b9cb-e992142e568d/Untitled.mp4)
+[Link to Solana Pay](https://github.com/phantom/shortcuts/assets/60185486/a0d435f3-2a9f-4335-bd69-4266f149145d)
 
 #### Cross-app integrations (Dialect, Communications)
 
@@ -285,7 +284,7 @@ Similar to the Solana pay examples, any Universal Link could be used to generate
 
 Limited to mobile platforms only as Dialect is only supported in mobile as well.
 
-[RPReplay_Final1688678108.MP4](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1851aeee-79be-429d-b907-1c5110734ff8/RPReplay_Final1688678108.mp4)
+[Cross-app integrations](https://github.com/phantom/shortcuts/assets/60185486/4a376bb8-ad36-41e5-9a1b-fa06ce7b43e2)
 
 ### Extension
 
@@ -302,13 +301,16 @@ Limited to mobile platforms only as Dialect is only supported in mobile as well.
     }
     ```
     
-    [quick-flip.mp4](quick-flip.mp4)
+    [quick-flip](https://github.com/phantom/shortcuts/assets/60185486/66b4680d-5c26-40a3-81de-9f98d6dca542)
     
 - **Direct users to partners**
     
     Projects can partner with providers to do things like loans and provide quick access for users to leverage the partnership
     
     [sharky.mp4](https://github.com/phantom/shortcuts/assets/60185486/48384f06-1f9a-40d0-abb7-5bd74091b068)
+
+
+
 
 
 
