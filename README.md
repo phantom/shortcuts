@@ -308,5 +308,7 @@ Limited to mobile platforms only as Dialect is only supported in mobile as well.
     
     Projects can partner with providers to do things like loans and provide quick access for users to leverage the partnership
     
-    [sharky.mp4](/sharky.mp4)
+    [sharky.mp4](https://github.com/phantom/shortcuts/assets/60185486/48384f06-1f9a-40d0-abb7-5bd74091b068)
+
+
 
