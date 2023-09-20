@@ -281,13 +281,11 @@ To prevent broken experiences, an optional platform modifier can be supplied to 
 Similar to the Solana pay examples, any Universal Link can be used to generated shortcuts.
 
 Limited to only mobile platforms as Dialect is only supported on mobile as well.
-
-[Cross-app integrations](https://github.com/phantom/shortcuts/assets/60185486/4a376bb8-ad36-41e5-9a1b-fa06ce7b43e2)
+[Cross-app integrations](https://github.com/phantom/shortcuts/assets/60185486/199b4ce6-3097-44e5-835c-efdb4111d0e1)
 
 ### Extension
     
 #### Direct users to partners
     
 Projects can partner with providers to do things like loans and provide quick access for users to leverage the partnership
-
-[sharky.mp4](https://github.com/phantom/shortcuts/assets/60185486/48384f06-1f9a-40d0-abb7-5bd74091b068)
+[sharky.mp4](https://github.com/phantom/shortcuts/assets/60185486/575675db-350b-49e4-9aca-42772bc46530)
